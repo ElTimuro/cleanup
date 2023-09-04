@@ -11,5 +11,5 @@ destination_dir="$downloads_dir/Archive/$current_date"
 mkdir -p "$destination_dir"
 echo -n "cleaning up..."
 # Move files from the Downloads directory to the current date's folder silently
-find "$downloads_dir" -type f -exec mv -n {} "$destination_dir" \; >/dev/null 2>&1
+find "$downloads_dir" -type f -exec mv {} "$destination_dir" \; >/dev/null 2>&1
 echo "done"
