@@ -10,6 +10,6 @@ destination_dir="$downloads_dir/Archive/$current_date"
 # Create the destination directory if it doesn't exist
 mkdir -p "$destination_dir"
 echo -n "🧹Cleaning up..."
-# Move individual files (exclude directories and their contents) from the Downloads directory to the current date's folder silently
-find "$downloads_dir" -type f -exec mv {} "$destination_dir" \; >/dev/null 2>&1
+# Move files (excluding subdirectories and their contents) from the Downloads directory to the current date's folder silently
+find "$downloads_dir" -maxdepth 1 -type f -exec mv {} "$destination_dir" \; >/dev/null 2>&1
 echo "Done ✨"
